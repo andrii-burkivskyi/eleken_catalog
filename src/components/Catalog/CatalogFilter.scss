@@ -1,0 +1,30 @@
+@import '~assets';
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: $xl;
+  margin-top: 35px;
+}
+
+.navigation {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: calc(#{percentage(6 / 12)} + #{3 * $half-gutter});
+
+  @include breakpoint($lg) {
+    max-width: calc(#{percentage(8 / 12)} + #{3 * $half-gutter});
+    margin: 0 $half-gutter;
+  }
+
+  @include breakpoint($md) {
+    justify-content: center;
+    max-width: percentage(12 / 12);
+    margin: 0;
+  }
+}

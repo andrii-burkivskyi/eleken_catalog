@@ -1,0 +1,101 @@
+@import '~assets';
+
+.container {
+  display: none;
+  position: relative;
+  width: calc(#{percentage(4 / 12)} - #{$gutter});
+  height: 100%;
+  margin: 0 $half-gutter;
+
+  @include breakpoint($lg) {
+    display: block;
+  };
+}
+
+.button {
+  width: auto;
+  height: 100%;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  fill: $gray;
+}
+
+.open .icon {
+  fill: $menu-text-color;
+}
+
+.navigation {
+  position: absolute;
+  top: 100%;
+  left: -$half-gutter;
+  width: 100%;
+  min-width: 300px;
+  transform: translateY(-2em);
+  transition: all .3s ease-in-out 0s, visibility 0s linear .3s, z-index 0s linear .01s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+
+  @include breakpoint($md) {
+    // width: min-width;
+  }
+}
+
+.open .navigation {
+  margin-top: 1px;
+  transform: translateY(0%);
+  transition-delay: 0s, 0s, .03s;
+  background-color: $white;
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+
+.main_nav {
+  @include clearfix;
+}
+
+.info_nav {
+  @include clearfix;
+  display: none;
+  border-top: 1px solid $menu-border-color;
+
+  @include breakpoint($sm) {
+    display: block;
+  }
+}
+
+.currensy {
+  @include underline($blue, 2px);
+  display: none;
+  line-height: 30px;
+
+  @include breakpoint($sm) {
+    @include underline($menu-border-color, 100%, 0, left);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-left: $half-gutter;
+    border-top: 1px solid $menu-border-color;
+  }
+}
+
+.side_nav_name {
+  @include breakpoint($lg) {
+    margin: 5px 0;
+    color: $menu-text-color;
+    font-family: $lato;
+    font-size: 11px;
+    text-transform: uppercase;
+  }
+}
+
+.side_nav_icon {
+  width: 8px;
+  height: 8px;
+  margin: auto $half-gutter auto auto;
+  fill: $gray;
+}

@@ -1,0 +1,11 @@
+@import '~assets';
+
+.link {
+  @include underline($blue, 2px);
+  display: inline-block;
+  line-height: 25px;
+
+  @include breakpoint($sm) {
+    text-align: center;
+  }
+}

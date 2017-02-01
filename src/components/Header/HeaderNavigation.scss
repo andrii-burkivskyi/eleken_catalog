@@ -1,0 +1,128 @@
+@import '~assets';
+
+.container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: $xl;
+  height: 100px;
+  color: $menu-text-color;
+  font-family: $lato;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.logo {
+  width: calc(#{percentage(3 / 12)} - #{$gutter});
+  margin: 0 $half-gutter;
+
+  & img {
+    width: 100%;
+    max-width: 95px;
+    height: auto;
+  }
+
+  @include breakpoint($lg) {
+    width: calc(#{percentage(4 / 12)} - #{$gutter});
+    text-align: center;
+  }
+}
+
+.main_nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: no-wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: percentage(6 / 12);
+  padding: 0 5px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  line-height: 15px;
+  text-transform: uppercase;
+
+  @include breakpoint($lg) {
+    display: none;
+  }
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: calc(#{percentage(3 / 12)} - #{$gutter});
+  margin: 0 $half-gutter;
+  font-size: 12px;
+  letter-spacing: 1px;
+  line-height: 15px;
+  text-transform: uppercase;
+
+  @include breakpoint($lg) {
+    width: calc(#{percentage(4 / 12)} - #{$gutter});
+  }
+}
+
+.basket {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 20px;
+
+  &:hover .basket_counter {
+    transition: background-color .3s;
+    background-color: $menu-border-color;
+  }
+
+  @include breakpoint($lg) {
+    margin-right: 0;
+  }
+}
+
+.basket_name {
+  margin-right: 15px;
+
+  @include breakpoint($md) {
+    display: none;
+  }
+}
+
+.basket_counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  transition: background-color .3s;
+  border: 2px solid $blue;
+  border-radius: 50%;
+  background-color: rgba($menu-border-color, 0);
+  color: $gray;
+}
+
+.search {
+  width: 15px;
+  height: 15px;
+  transition: box-shadow .3s, background-color .3s;
+  border-radius: 50%;
+  background-color: rgba($menu-border-color, 0);
+  box-shadow: 0 0 0 10px rgba($menu-border-color, 0);
+  cursor: pointer;
+
+  &:hover {
+    transition: box-shadow .3s, background-color .3s;
+    background-color: $menu-border-color;
+    box-shadow: 0 0 0 10px $menu-border-color;
+  }
+
+  @include breakpoint($lg) {
+    display: none;
+  }
+}
+
+.search_icon {
+  width: 15px;
+  height: 15px;
+  fill: rgba($black, .5);
+}

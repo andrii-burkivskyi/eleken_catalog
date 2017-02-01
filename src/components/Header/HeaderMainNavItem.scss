@@ -1,0 +1,29 @@
+@import '~assets';
+
+.container {
+  @include underline($blue, 2px);
+  display: inline-block;
+  line-height: 30px;
+
+  @include breakpoint($lg) {
+    @include underline($menu-border-color, 100%, 0, left);
+    display: inline;
+    width: 100%;
+    margin: 5px 0;
+    padding-left: $half-gutter;
+    float: left;
+  }
+}
+
+.container.attention {
+  color: $red;
+}
+
+.container.active {
+  @include underline-static($blue, 2px);
+  color: $gray;
+
+  @include breakpoint($lg) {
+    @include underline-static($menu-border-color, 100%);
+  }
+}

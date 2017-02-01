@@ -1,0 +1,37 @@
+@mixin breakpoint($width) {
+  @media only screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin clearfix() {
+  &:after {
+    display: block;
+    height: 0;
+    clear: both;
+    content: '';
+    visibility: hidden;
+  }
+}
+@mixin underline($color, $height, $indent: 0, $animation: center) {
+  padding-bottom: $indent;
+  transition: background-size .3s;
+  background-image: linear-gradient(0deg, $color 0%, $color 100%);
+  background-repeat: no-repeat;
+  background-position: bottom $animation;
+  background-size: 0% $height;
+
+  &:hover {
+    transition: background-size .3s;
+    background-size: 100% $height;
+  }
+}
+
+@mixin underline-static ($color, $height, $indent: 0) {
+  padding-bottom: $indent;
+  background-image: linear-gradient(0deg, $color 0%, $color 100%);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% $height;
+}
+

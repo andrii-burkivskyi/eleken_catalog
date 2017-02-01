@@ -1,0 +1,77 @@
+@import '~assets';
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  padding-top: 68px;
+  padding-bottom: 70px;
+  background-color: $blue;
+  background-image: url('/images/footer.jpg');
+  background-size: cover;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: $xl;
+}
+
+.subtitle {
+  color: rgba($gray, .6);
+  font-family: $lato;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.4px;
+  line-height: 14px;
+  text-transform: uppercase;
+}
+
+.title {
+  margin-top: 15px;
+  padding: 0 $half-gutter;
+  color: $white;
+  font-family: $playfair-display;
+  font-size: 38px;
+  font-weight: regular;
+  line-height: 40px;
+  text-align: center;
+}
+
+.email {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 300px;
+  margin-top: 30px;
+  padding-right: 20px;
+  border: 2px solid rgba($white, .3);
+  border-radius: 46px;
+}
+
+.field {
+  display: inline-block;
+  width: 95%;
+  margin: 0 25px;
+  padding: 15px 0;
+  outline: none;
+  background-color: transparent;
+  color: $white;
+  font-family: $lato;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  line-height: 16px;
+
+  &::placeholder {
+    color: $white;
+  }
+}
+
+.icon {
+  width: 10px;
+  height: 10px;
+  transform: rotate(-90deg);
+  fill: $white;
+}
